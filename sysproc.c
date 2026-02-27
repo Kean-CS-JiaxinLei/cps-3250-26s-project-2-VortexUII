@@ -89,3 +89,11 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+//Task Four Implementation
+#include "x86.h"
+int shutdown(void)
+{
+outw(0xB004, 0x0|0x2000);
+outw(0x604, 0x0|0x2000);
+return 0;
+}
