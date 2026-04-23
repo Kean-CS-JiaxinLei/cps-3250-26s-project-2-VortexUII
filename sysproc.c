@@ -90,10 +90,10 @@ sys_uptime(void)
   return xticks;
 }
 //Task Four Implementation
-#include "x86.h"
-int shutdown(void)
+int
+sys_shutdown(void)
 {
-outw(0xB004, 0x0|0x2000);
-outw(0x604, 0x0|0x2000);
-return 0;
+  outw(0xB004, 0x0|0x2000);
+  outw(0x604, 0x0|0x2000);
+  return 0;
 }
